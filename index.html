@@ -2,10 +2,10 @@
 
 <html lang="en">
 <head>
-<meta name="theme-color" content="#0b3d91"/>
+<meta content="#0b3d91" name="theme-color"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>🚆 Japan – Train Guide 2025</title>
+<title>🚆 Japan : Steph and Sarah's Travel Guide 2025</title>
 <link href="/SP-2025-transport/assets/manifest.json" rel="manifest"/>
 <link href="/SP-2025-transport/assets/icons/icon-192x192.png" rel="icon" type="image/png"/>
 <link href="/SP-2025-transport/assets/icons/icon-192x192.png" rel="apple-touch-icon"/>
@@ -138,7 +138,7 @@ td[data-label="Arrival Time"] .v { flex:0 0 auto; }
   table.fixed th:nth-child(7), table.fixed td:nth-child(7) { width: 18%; }  /* Details */
   table.fixed th:nth-child(8), table.fixed td:nth-child(8) { width: 5%; }   /* Fare Each (¥) */
 
-  /* Keep "Heading – Value" inline but allow natural wrapping within the cell */
+  /* Keep "Heading : Value" inline but allow natural wrapping within the cell */
   .kv { display: inline-flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap; white-space: normal; }
   .kv .v { word-break: break-word; }
   .kv .sep { opacity: 0.8; }
@@ -159,130 +159,57 @@ td[data-label="Arrival Time"] .v { flex:0 0 auto; }
   table.fixed th:nth-of-type(7), table.fixed td:nth-of-type(7) { width: 26% !important; } /* Details */
   table.fixed th:nth-of-type(8), table.fixed td:nth-of-type(8) { width: 5%  !important; } /* Fare Each (¥) */
 
-  /* Keep 'Heading – Value' compact but allow wrapping on values */
+  /* Keep 'Heading : Value' compact but allow wrapping on values */
   .kv { display: inline-flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap; white-space: normal; }
   .kv .v { overflow-wrap: anywhere; word-break: break-word; }
   .kv .sep { opacity: 0.9; }
 }
 
-</style>
+
+
+/* --- Mobile readability fix for Index A tables --- */
+@media (max-width: 600px) {
+  details { padding: 0.75rem; }
+  table { width: 100%; border-collapse: collapse; }
+  thead { display: none !important; }
+  table, tbody, tr, td { display: block; width: 100%; }
+  tr { margin: 0 0 1rem 0; border: 1px solid #e5e5e5; border-radius: 10px; background: #fff; overflow: hidden; }
+  td { padding: 0.65rem 0.9rem; border: none !important; border-bottom: 1px solid #f0f0f0 !important; }
+  td:last-child { border-bottom: none !important; }
+  td > strong { display: block; margin-bottom: 0.25rem; font-weight: 700; }
+}
+
+\n
+/* Label separators by viewport */
+@media (min-width: 601px) {
+  td > strong::after { content: " — "; opacity: 0.8; }
+}
+@media (max-width: 600px) {
+  td > strong::after { content: ":"; }
+}
+\n\n
+/* Label separators fix */
+td > strong::after { content: ": "; }
+
+@media (min-width: 601px) {
+  td > strong::after { content: ": "; }
+}
+@media (max-width: 600px) {
+  td > strong::after { content: ":"; }
+}
+\n\n
+/* Desktop: hide inline labels to keep columns aligned; Mobile: show labels */
+@media (min-width: 601px) {
+  td > strong { display: none !important; }
+}
+@media (max-width: 600px) {
+  td > strong { display: block !important; }
+}
+\n</style>
 </head>
 <body>
-<h1>🚆 Japan – Train Guide 2025</h1>
-<details open=""><summary>🚆 Trains – Aug–Sep 2025 (Shinkansen &amp; Airport Rail)</summary>
-<details><summary>🛫 KIX ➔ Shin‑Osaka (30 Aug, 9:00 pm)</summary>
-<table class="fixed">
-<thead>
-<tr>
-<th>Departure Date</th>
-<th>From (Departure)</th>
-<th>To (Destination)</th>
-<th>Departure Time</th>
-<th>Arrival Time</th>
-<th>Duration</th>
-<th>Details</th>
-<th>Fare Each (¥)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="Departure Date"><div class="kv"><span class="k">Departure Date</span><span class="sep"> – </span><span class="v">Sat, 30 Aug 2025</span></div></td>
-<td data-label="From (Departure)"><div class="kv"><span class="k">From (Departure)</span><span class="sep"> – </span><span class="v">Kansai Airport (KIX)</span></div></td>
-<td data-label="To (Destination)"><div class="kv"><span class="k">To (Destination)</span><span class="sep"> – </span><span class="v">Shin-Osaka Station</span></div></td>
-<td data-label="Departure Time"><div class="kv"><span class="k">Departure Time</span><span class="sep"> – </span><span class="v">9:00 PM</span></div></td>
-<td data-label="Arrival Time"><div class="kv"><span class="k">Arrival Time</span><span class="sep"> – </span><span class="v">9:51 PM</span></div></td>
-<td data-label="Duration"><div class="kv"><span class="k">Duration</span><span class="sep"> – </span><span class="v">51 mins</span></div></td>
-<td data-label="Details"><div class="kv"><span class="k">Details</span><span class="sep"> – </span><span class="v"><a href="https://www.westjr.co.jp/travel-information/en/tickets-passes/oneway/haruka/" rel="noopener" target="_blank">JR West – HARUKA (KIX ⇄ Shin‑Osaka)</a></span></div></td>
-<td data-label="Fare Each (¥)"><div class="kv"><span class="k">Fare Each</span><span class="sep"> – </span><span class="v">¥2,540</span></div></td>
-</tr>
-</tbody>
-</table>
-</details>
-<details><summary>🚄 Shin‑Osaka ➔ Shinjuku (31 Aug, 2:00 pm)</summary>
-<table class="fixed">
-<thead>
-<tr>
-<th>Departure Date</th>
-<th>From (Departure)</th>
-<th>To (Destination)</th>
-<th>Departure Time</th>
-<th>Arrival Time</th>
-<th>Duration</th>
-<th>Details</th>
-<th>Fare Each (¥)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="Departure Date"><div class="kv"><span class="k">Departure Date</span><span class="sep"> – </span><span class="v">Sun, 31 Aug 2025</span></div></td>
-<td data-label="From (Departure)"><div class="kv"><span class="k">From (Departure)</span><span class="sep"> – </span><span class="v">Shin-Osaka Station</span></div></td>
-<td data-label="To (Destination)"><div class="kv"><span class="k">To (Destination)</span><span class="sep"> – </span><span class="v">Shinjuku Station (via Tokyo)</span></div></td>
-<td data-label="Departure Time"><div class="kv"><span class="k">Departure Time</span><span class="sep"> – </span><span class="v">2:00 PM</span></div></td>
-<td data-label="Arrival Time"><div class="kv"><span class="k">Arrival Time</span><span class="sep"> – </span><span class="v">4:50 PM</span></div></td>
-<td data-label="Duration"><div class="kv"><span class="k">Duration</span><span class="sep"> – </span><span class="v">2 hrs 50 mins</span></div></td>
-<td data-label="Details"><div class="kv"><span class="k">Details</span><span class="sep"> – </span><span class="v"><a href="https://global.jr-central.co.jp/en/onlinebooking/contents/hello_osaka/" rel="noopener" target="_blank">JR Central – Tokaidō Shinkansen (Nozomi/Hikari)</a> + JR East Chūō Rapid</span></div></td>
-<td data-label="Fare Each (¥)"><div class="kv"><span class="k">Fare Each</span><span class="sep"> – </span><span class="v">¥14,500</span></div></td>
-</tr>
-</tbody>
-</table>
-</details>
-<details><summary>🚄 Shinjuku ➔ Shin‑Osaka (05 Sep, 2:00 pm)</summary>
-<table class="fixed">
-<thead>
-<tr>
-<th>Departure Date</th>
-<th>From (Departure)</th>
-<th>To (Destination)</th>
-<th>Departure Time</th>
-<th>Arrival Time</th>
-<th>Duration</th>
-<th>Details</th>
-<th>Fare Each (¥)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="Departure Date"><div class="kv"><span class="k">Departure Date</span><span class="sep"> – </span><span class="v">Fri, 05 Sep 2025</span></div></td>
-<td data-label="From (Departure)"><div class="kv"><span class="k">From (Departure)</span><span class="sep"> – </span><span class="v">Shinjuku Station (via Tokyo)</span></div></td>
-<td data-label="To (Destination)"><div class="kv"><span class="k">To (Destination)</span><span class="sep"> – </span><span class="v">Shin-Osaka Station</span></div></td>
-<td data-label="Departure Time"><div class="kv"><span class="k">Departure Time</span><span class="sep"> – </span><span class="v">2:00 PM</span></div></td>
-<td data-label="Arrival Time"><div class="kv"><span class="k">Arrival Time</span><span class="sep"> – </span><span class="v">4:50 PM</span></div></td>
-<td data-label="Duration"><div class="kv"><span class="k">Duration</span><span class="sep"> – </span><span class="v">2 hrs 50 mins</span></div></td>
-<td data-label="Details"><div class="kv"><span class="k">Details</span><span class="sep"> – </span><span class="v"><a href="https://global.jr-central.co.jp/en/onlinebooking/contents/hello_osaka/" rel="noopener" target="_blank">JR Central – Tokaidō Shinkansen (Nozomi/Hikari)</a> + JR East Chūō Rapid</span></div></td>
-<td data-label="Fare Each (¥)"><div class="kv"><span class="k">Fare Each</span><span class="sep"> – </span><span class="v">¥14,500</span></div></td>
-</tr>
-</tbody>
-</table>
-</details>
-<details><summary>🚉 Shin‑Osaka ➔ KIX (06 Sep, 2:00 pm)</summary>
-<table class="fixed">
-<thead>
-<tr>
-<th>Departure Date</th>
-<th>From (Departure)</th>
-<th>To (Destination)</th>
-<th>Departure Time</th>
-<th>Arrival Time</th>
-<th>Duration</th>
-<th>Details</th>
-<th>Fare Each (¥)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td data-label="Departure Date"><div class="kv"><span class="k">Departure Date</span><span class="sep"> – </span><span class="v">Sat, 06 Sep 2025</span></div></td>
-<td data-label="From (Departure)"><div class="kv"><span class="k">From (Departure)</span><span class="sep"> – </span><span class="v">Shin-Osaka Station</span></div></td>
-<td data-label="To (Destination)"><div class="kv"><span class="k">To (Destination)</span><span class="sep"> – </span><span class="v">Kansai Airport (KIX)</span></div></td>
-<td data-label="Departure Time"><div class="kv"><span class="k">Departure Time</span><span class="sep"> – </span><span class="v">2:00 PM</span></div></td>
-<td data-label="Arrival Time"><div class="kv"><span class="k">Arrival Time</span><span class="sep"> – </span><span class="v">2:51 PM</span></div></td>
-<td data-label="Duration"><div class="kv"><span class="k">Duration</span><span class="sep"> – </span><span class="v">51 mins</span></div></td>
-<td data-label="Details"><div class="kv"><span class="k">Details</span><span class="sep"> – </span><span class="v"><a href="https://www.westjr.co.jp/travel-information/en/tickets-passes/oneway/haruka/" rel="noopener" target="_blank">JR West – HARUKA (Shin‑Osaka ⇄ KIX)</a></span></div></td>
-<td data-label="Fare Each (¥)"><div class="kv"><span class="k">Fare Each</span><span class="sep"> – </span><span class="v">¥2,540</span></div></td>
-</tr>
-</tbody>
-</table>
-</details>
-</details>
+<h1>🚆 Japan : Steph and Sarah's Travel Guide 2025</h1>
+<details open=""><summary>Trains — Aug 2025:Sep 2025 (Shinkansen &amp; Airport Rail)</summary><details><summary>🛫 Kansai Airport (KIX) → Kyoto Station (Sat 30 Aug 2025, 21:00)</summary><table class="table is-narrow is-fullwidth fixed"><thead><tr><th>Departure Date</th><th>From (Departure)</th><th>To (Destination)</th><th>Departure Time</th><th>Arrival Time</th><th>Duration</th><th>Booking</th><th>Fare Each (¥)</th></tr></thead><tbody><tr><td><strong>Departure Date</strong>Sat, 30 Aug 2025</td><td><strong>From (Departure)</strong>Kansai Airport (KIX)</td><td><strong>To (Destination)</strong>Kyoto Station</td><td><strong>Departure Time</strong>21:00</td><td><strong>Arrival Time</strong>22:15</td><td><strong>Duration</strong>75 mins</td><td><strong>Booking</strong><a href="https://www.westjr.co.jp/global/en/ticket/haruka-oneway/reservation/" rel="noopener" target="_blank">JR West : HARUKA One‑way (Official booking)</a></td><td><strong>Fare Each</strong>¥1,100</td></tr></tbody></table></details><details><summary>🚄 Kyoto Station → Tokyo Station (Tue 02 Sep 2025, 12:00)</summary><table class="table is-narrow is-fullwidth fixed"><thead><tr><th>Departure Date</th><th>From (Departure)</th><th>To (Destination)</th><th>Departure Time</th><th>Arrival Time</th><th>Duration</th><th>Booking</th><th>Fare Each (¥)</th></tr></thead><tbody><tr><td><strong>Departure Date</strong>Tue, 02 Sep 2025</td><td><strong>From (Departure)</strong>Kyoto Station</td><td><strong>To (Destination)</strong>Tokyo Station</td><td><strong>Departure Time</strong>12:00</td><td><strong>Arrival Time</strong>14:14</td><td><strong>Duration</strong>134 mins</td><td><strong>Booking</strong><a href="https://smart-ex.jp/en/lp/app/" rel="noopener" target="_blank">JR Central : Smart‑EX (Official booking)</a> Ordinary: ¥13,770; Green: ¥18,640; Non‑reserved: ¥13,320</td><td><strong>Fare Each</strong>¥13,770</td></tr></tbody></table></details><details><summary>🚄 Tokyo Station → Shin-Osaka Station (Fri 05 Sep 2025, 14:00)</summary><table class="table is-narrow is-fullwidth fixed"><thead><tr><th>Departure Date</th><th>From (Departure)</th><th>To (Destination)</th><th>Departure Time</th><th>Arrival Time</th><th>Duration</th><th>Booking</th><th>Fare Each (¥)</th></tr></thead><tbody><tr><td><strong>Departure Date</strong>Fri, 05 Sep 2025</td><td><strong>From (Departure)</strong>Tokyo Station</td><td><strong>To (Destination)</strong>Shin-Osaka Station</td><td><strong>Departure Time</strong>14:00</td><td><strong>Arrival Time</strong>16:30</td><td><strong>Duration</strong>150 mins</td><td><strong>Booking</strong><a href="https://shinkansen2.jr-central.co.jp/RSV_P/smart_en_index.htm?" rel="noopener" target="_blank">JR Central : Smart‑EX (Official booking)</a> Ordinary: ¥14,520; Green: ¥19,390; Non‑reserved: ¥13,870</td><td><strong>Fare Each</strong>¥14,520</td></tr></tbody></table></details><details><summary>🚉 Shin-Osaka Station → Kansai Airport (KIX) (Sat 06 Sep 2025, 14:00)</summary><table class="table is-narrow is-fullwidth fixed"><thead><tr><th>Departure Date</th><th>From (Departure)</th><th>To (Destination)</th><th>Departure Time</th><th>Arrival Time</th><th>Duration</th><th>Booking</th><th>Fare Each (¥)</th></tr></thead><tbody><tr><td><strong>Departure Date</strong>Sat, 06 Sep 2025</td><td><strong>From (Departure)</strong>Shin-Osaka Station</td><td><strong>To (Destination)</strong>Kansai Airport (KIX)</td><td><strong>Departure Time</strong>14:00</td><td><strong>Arrival Time</strong>14:51</td><td><strong>Duration</strong>51 mins</td><td><strong>Booking</strong><a href="https://www.westjr.co.jp/global/en/ticket/haruka-oneway/reservation/" rel="noopener" target="_blank">JR West : HARUKA One‑way (Official booking)</a></td><td><strong>Fare Each</strong>¥900</td></tr></tbody></table></details></details>
 <script>
 (function() {
   function enhanceNotes() {
@@ -309,7 +236,6 @@ td[data-label="Arrival Time"] .v { flex:0 0 auto; }
   }
 })();
 </script>
-
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
@@ -318,6 +244,5 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
-
 </body>
 </html>
