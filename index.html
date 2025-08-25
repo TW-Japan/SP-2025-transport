@@ -2,12 +2,13 @@
 
 <html lang="en">
 <head>
+<meta name="theme-color" content="#0b3d91"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>🚆 Japan – Train Guide 2025</title>
-<link href="/GJN-2025-transport/assets/manifest.json" rel="manifest"/>
-<link href="/GJN-2025-transport/assets/icons/icon-192x192.png" rel="icon" type="image/png"/>
-<link href="/GJN-2025-transport/assets/icons/icon-192x192.png" rel="apple-touch-icon"/>
+<link href="/SP-2025-transport/assets/manifest.json" rel="manifest"/>
+<link href="/SP-2025-transport/assets/icons/icon-192x192.png" rel="icon" type="image/png"/>
+<link href="/SP-2025-transport/assets/icons/icon-192x192.png" rel="apple-touch-icon"/>
 <style>
     body {
       font-family: sans-serif;
@@ -308,5 +309,15 @@ td[data-label="Arrival Time"] .v { flex:0 0 auto; }
   }
 })();
 </script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/SP-2025-transport/service-worker.js')
+      .catch(function(err){ console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+
 </body>
 </html>
