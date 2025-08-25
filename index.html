@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>🚐 South Korea – Transport Guide 2025</title>
+<title>🚆 Japan – Train Guide 2025</title>
 <link href="/GJN-2025-transport/assets/manifest.json" rel="manifest"/>
 <link href="/GJN-2025-transport/assets/icons/icon-192x192.png" rel="icon" type="image/png"/>
 <link href="/GJN-2025-transport/assets/icons/icon-192x192.png" rel="apple-touch-icon"/>
@@ -106,41 +105,183 @@
   }
 }
 
+
+/* === Key/Value layout inside cells === */
+.kv { display:inline-flex; align-items:baseline; gap:0.25rem; flex-wrap:nowrap; white-space:nowrap; }
+.kv .k { min-width:0; font-weight:600; } /* fixed label width for alignment */
+.kv .sep { opacity: 0.75; }
+.kv .v { flex:0 0 auto; }
+@media (max-width: 600px) {
+  td::before { content: none !important; } /* prevent duplicate labels on mobile */
+  .kv .k { min-width:0; font-weight:600; }
+  td { padding: 0.45rem 0.6rem; }
+}
+td[data-label="Duration"] .v,
+td[data-label="Fare Each (¥)"] .v,
+td[data-label="Departure Time"] .v,
+td[data-label="Arrival Time"] .v { flex:0 0 auto; }
+
+/* === Desktop: align column headings across all tables & wrap content to fit === */
+@media (min-width: 601px) {
+  table.fixed { table-layout: fixed; width: 100%; }
+  table.fixed th, table.fixed td { vertical-align: top; }
+  table.fixed th { text-align: left; }
+
+  /* Consistent column widths across every table (8 columns) */
+  table.fixed th:nth-child(1), table.fixed td:nth-child(1) { width: 12%; }  /* Departure Date */
+  table.fixed th:nth-child(2), table.fixed td:nth-child(2) { width: 16%; }  /* From (Departure) */
+  table.fixed th:nth-child(3), table.fixed td:nth-child(3) { width: 18%; }  /* To (Destination) */
+  table.fixed th:nth-child(4), table.fixed td:nth-child(4) { width: 11%; }  /* Departure Time */
+  table.fixed th:nth-child(5), table.fixed td:nth-child(5) { width: 11%; }  /* Arrival Time */
+  table.fixed th:nth-child(6), table.fixed td:nth-child(6) { width: 9%; }   /* Duration */
+  table.fixed th:nth-child(7), table.fixed td:nth-child(7) { width: 18%; }  /* Details */
+  table.fixed th:nth-child(8), table.fixed td:nth-child(8) { width: 5%; }   /* Fare Each (¥) */
+
+  /* Keep "Heading – Value" inline but allow natural wrapping within the cell */
+  .kv { display: inline-flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap; white-space: normal; }
+  .kv .v { word-break: break-word; }
+  .kv .sep { opacity: 0.8; }
+}
+
+
+/* === Desktop override: tighter middle columns, wider Details; prevent spill === */
+@media (min-width: 601px) {
+  table.fixed { table-layout: fixed; width: 100%; }
+  table.fixed th, table.fixed td { vertical-align: top; }
+  /* Column widths (sum = 100%) */
+  table.fixed th:nth-of-type(1), table.fixed td:nth-of-type(1) { width: 12% !important; } /* Departure Date */
+  table.fixed th:nth-of-type(2), table.fixed td:nth-of-type(2) { width: 15% !important; } /* From (Departure) */
+  table.fixed th:nth-of-type(3), table.fixed td:nth-of-type(3) { width: 15% !important; } /* To (Destination) */
+  table.fixed th:nth-of-type(4), table.fixed td:nth-of-type(4) { width: 10% !important; } /* Departure Time */
+  table.fixed th:nth-of-type(5), table.fixed td:nth-of-type(5) { width: 10% !important; } /* Arrival Time */
+  table.fixed th:nth-of-type(6), table.fixed td:nth-of-type(6) { width: 7%  !important; } /* Duration */
+  table.fixed th:nth-of-type(7), table.fixed td:nth-of-type(7) { width: 26% !important; } /* Details */
+  table.fixed th:nth-of-type(8), table.fixed td:nth-of-type(8) { width: 5%  !important; } /* Fare Each (¥) */
+
+  /* Keep 'Heading – Value' compact but allow wrapping on values */
+  .kv { display: inline-flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap; white-space: normal; }
+  .kv .v { overflow-wrap: anywhere; word-break: break-word; }
+  .kv .sep { opacity: 0.9; }
+}
+
 </style>
 </head>
 <body>
-<h1>🚐 South Korea – Transport Guide 2025</h1>
-<details><summary>🚐 Bangkok</summary>
-<details><summary>Suvarnabhumi Airport ➔ Grande Centre Point Hotel Ratchadamri</summary>
-<table><thead><tr><th>Provider</th><th>Price (BAHT)</th><th>Price (AU)</th><th>WhatsApp</th><th>Vehicle</th><th>Notes</th></tr></thead>
-<tbody><tr><td data-label="Provider"><a href="https://www.thaitransfers.com/" target="_blank">Thai Transfer</a></td><td data-label="Price (BAHT)">900</td><td data-label="Price (AU)">42.57</td><td data-label="WhatsApp">+66 81 157 6772</td><td data-label="Vehicle">9 seater</td><td data-label="Notes">1.Sent a transfer order from the main site. 2.You can also give us a phone call. 3.We kindly ask you to make your reservation one day before planned arrival. 4.Please wait for the confirmation of your inquiry by email. 5.The driver will be waiting for you in the terminal main hall in the indicated meeting point (on the situation card) 6.Please pay the driver before departure 7.Our driver has been trained about the safety and security and is driving slowly according to international standards.</td></tr>
-</tbody></table>
-</details>
-<details><summary>Grande Centre Point Hotel Ratchadamri ➔ Don Mueang Airport</summary>
-<table><thead><tr><th>Provider</th><th>Price (BAHT)</th><th>Price (AU)</th><th>WhatsApp</th><th>Vehicle</th><th>Notes</th></tr></thead>
-<tbody><tr><td data-label="Provider"><a href="https://www.thaitransfers.com/" target="_blank">Thai Transfer</a></td><td data-label="Price (BAHT)">900</td><td data-label="Price (AU)">42.57</td><td data-label="WhatsApp">+66 81 157 6772</td><td data-label="Vehicle">9 seater</td><td data-label="Notes">Its enough to sent us one day before expected departure a reservation that you can find on our main web site. Then you only need to wait for our reply which will include a voucher confirming the service. The driver will be waiting for you at the agreed time by the reception with your name card. The provided service is quick, comfortable. On board of our vans you can enjoy selection of good music and a free Wi-Fi internet. With us you do not need to worry about the accuracy of the way taken by the driver, he will always choose the best and quickest option.</td></tr>
-</tbody></table>
-</details>
-</details>
-<details><summary>🚐 Phuket</summary>
-<details><summary>Phuket Airport ➔ Outrigger Surin Beach Resort</summary>
-<table><thead><tr><th>Provider</th><th>Price (BAHT)</th><th>Price (AU)</th><th>WhatsApp</th><th>Vehicle</th><th>Notes</th></tr></thead>
+<h1>🚆 Japan – Train Guide 2025</h1>
+<details open=""><summary>🚆 Trains – Aug–Sep 2025 (Shinkansen &amp; Airport Rail)</summary>
+<details><summary>🛫 KIX ➔ Shin‑Osaka (30 Aug, 9:00 pm)</summary>
+<table class="fixed">
+<thead>
+<tr>
+<th>Departure Date</th>
+<th>From (Departure)</th>
+<th>To (Destination)</th>
+<th>Departure Time</th>
+<th>Arrival Time</th>
+<th>Duration</th>
+<th>Details</th>
+<th>Fare Each (¥)</th>
+</tr>
+</thead>
 <tbody>
-<tr><td data-label="Provider"><a href="https://www.klook.com/en-AU/airport-transfers/results/?flightDirection=1&amp;from=Phuket%20International%20Airport%28HKT%29&amp;to=Outrigger%20Surin%20Beach%20Resort&amp;address=121%2F1%20Moo%203,%20Srisunthorn%20Rd%20Cheng%20Talay,%20%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5%E0%B9%80%E0%B8%8A%E0%B8%B4%E0%B8%87%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5%20%E0%B8%AD%E0%B8%B3%E0%B9%80%E0%B8%A0%E0%B8%AD%E0%B8%96%E0%B8%A5%E0%B8%B2%E0%B8%87%20%E0%B8%A0%E0%B8%B9%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%95%2083110,%20Thailand&amp;lat=8.1132002&amp;long=98.3169022&amp;poiId=&amp;poi_lat=7.9769193&amp;poi_long=98.2804206&amp;time=2025-05-19%2021%3A30&amp;pas=4&amp;code=HKT&amp;place=ChIJT2IhdsE3UDARjFymk0TnpYM&amp;ac=1&amp;kcid=7&amp;flightNo=&amp;originCode=&amp;spm=AirportTransfer_SearchResult.TopNavigation.SelectCurrency&amp;clickId=53cd5d1b6d" target="_blank">Phuket Freeday Tour</a></td><td data-label="Price (BAHT)">960</td><td data-label="Price (AU)">45.408</td><td data-label="WhatsApp">TBC</td><td data-label="Vehicle">10 seater</td><td data-label="Notes">Instant confirmation. You'll get your booking confirmation in minutes after your payment is complete Free waiting time. You will get a free waiting time of 2 hour(s) after the actual landing time. If you selected a pick-up time, you will get a free waiting time of 30 minutes. Free cancellation up to 24 hour(s) before your pick-up time. Meet &amp; greet. For airport pick up, an airport representative will be waiting at the Arrival Hall holding a Klook sign</td></tr>
-<tr><td data-label="Provider"><a href="https://www.klook.com/en-AU/airport-transfers/results/?flightDirection=1&amp;from=Phuket%20International%20Airport%28HKT%29&amp;to=Outrigger%20Surin%20Beach%20Resort&amp;address=121%2F1%20Moo%203,%20Srisunthorn%20Rd%20Cheng%20Talay,%20%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5%E0%B9%80%E0%B8%8A%E0%B8%B4%E0%B8%87%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5%20%E0%B8%AD%E0%B8%B3%E0%B9%80%E0%B8%A0%E0%B8%AD%E0%B8%96%E0%B8%A5%E0%B8%B2%E0%B8%87%20%E0%B8%A0%E0%B8%B9%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%95%2083110,%20Thailand&amp;lat=8.1132002&amp;long=98.3169022&amp;poiId=&amp;poi_lat=7.9769193&amp;poi_long=98.2804206&amp;time=2025-05-19%2021%3A30&amp;pas=4&amp;code=HKT&amp;place=ChIJT2IhdsE3UDARjFymk0TnpYM&amp;ac=1&amp;kcid=7&amp;flightNo=&amp;originCode=&amp;spm=AirportTransfer_SearchResult.TopNavigation.SelectCurrency&amp;clickId=53cd5d1b6d" target="_blank">Phuket Rainbow International Travel Company Limited</a></td><td data-label="Price (BAHT)">978</td><td data-label="Price (AU)">46.2594</td><td data-label="WhatsApp">TBC</td><td data-label="Vehicle">10 seater</td><td data-label="Notes">You'll get your booking confirmation in minutes after your payment is complete. Free waiting time. You will get a free waiting time of 1 hour(s) 30 minutes after the actual landing time. If you selected a pick-up time, you will get a free waiting time of 30 minutes. Free cancellation up to 24 hour(s) before your pick-up time. Verified for safety. Our verified operators are required to follow strict quality standards to ensure a safe and reliable experience. Enjoy fixed-price pick-ups with trusted partners. Meet &amp; greet. Meet the operator's airport representative at the meeting point. Look out for a sign with Klook logo and the operator's name.</td></tr>
-<tr><td data-label="Provider"><a href="https://www.klook.com/en-AU/airport-transfers/results/?flightDirection=1&amp;from=Phuket%20International%20Airport%28HKT%29&amp;to=Outrigger%20Surin%20Beach%20Resort&amp;address=121%2F1%20Moo%203,%20Srisunthorn%20Rd%20Cheng%20Talay,%20%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5%E0%B9%80%E0%B8%8A%E0%B8%B4%E0%B8%87%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5%20%E0%B8%AD%E0%B8%B3%E0%B9%80%E0%B8%A0%E0%B8%AD%E0%B8%96%E0%B8%A5%E0%B8%B2%E0%B8%87%20%E0%B8%A0%E0%B8%B9%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%95%2083110,%20Thailand&amp;lat=8.1132002&amp;long=98.3169022&amp;poiId=&amp;poi_lat=7.9769193&amp;poi_long=98.2804206&amp;time=2025-05-19%2021%3A30&amp;pas=4&amp;code=HKT&amp;place=ChIJT2IhdsE3UDARjFymk0TnpYM&amp;ac=1&amp;kcid=7&amp;flightNo=&amp;originCode=&amp;spm=AirportTransfer_SearchResult.TopNavigation.SelectCurrency&amp;clickId=53cd5d1b6d" target="_blank">I Asia (Thailand)</a></td><td data-label="Price (BAHT)">978</td><td data-label="Price (AU)">46.2594</td><td data-label="WhatsApp">TBC</td><td data-label="Vehicle">10 seater</td><td data-label="Notes">Guaranteed model: Toyota Commuter 8pax Van. The supplier will give you the exact car model you selected. Instant confirmation. You'll get your booking confirmation in minutes after your payment is complete Free waiting time. You will get a free waiting time of 2 hour(s) after the actual landing time. If you selected a pick-up time, you will get a free waiting time of 30 minutes. Free cancellation up to 12 hour(s) before your pick-up time. Verified for safety. Our verified operators are required to follow strict quality standards to ensure a safe and reliable experience. Enjoy fixed-price pick-ups with trusted partners. Meet &amp; greet. Driver will be waiting to escort you to your vehicle upon your arrival</td></tr>
-</tbody></table>
+<tr>
+<td data-label="Departure Date"><div class="kv"><span class="k">Departure Date</span><span class="sep"> – </span><span class="v">Sat, 30 Aug 2025</span></div></td>
+<td data-label="From (Departure)"><div class="kv"><span class="k">From (Departure)</span><span class="sep"> – </span><span class="v">Kansai Airport (KIX)</span></div></td>
+<td data-label="To (Destination)"><div class="kv"><span class="k">To (Destination)</span><span class="sep"> – </span><span class="v">Shin-Osaka Station</span></div></td>
+<td data-label="Departure Time"><div class="kv"><span class="k">Departure Time</span><span class="sep"> – </span><span class="v">9:00 PM</span></div></td>
+<td data-label="Arrival Time"><div class="kv"><span class="k">Arrival Time</span><span class="sep"> – </span><span class="v">9:51 PM</span></div></td>
+<td data-label="Duration"><div class="kv"><span class="k">Duration</span><span class="sep"> – </span><span class="v">51 mins</span></div></td>
+<td data-label="Details"><div class="kv"><span class="k">Details</span><span class="sep"> – </span><span class="v"><a href="https://www.westjr.co.jp/travel-information/en/tickets-passes/oneway/haruka/" rel="noopener" target="_blank">JR West – HARUKA (KIX ⇄ Shin‑Osaka)</a></span></div></td>
+<td data-label="Fare Each (¥)"><div class="kv"><span class="k">Fare Each</span><span class="sep"> – </span><span class="v">¥2,540</span></div></td>
+</tr>
+</tbody>
+</table>
 </details>
-<details><summary>Outrigger Surin Beach Resort ➔ Phuket Airport</summary>
-<table><thead><tr><th>Provider</th><th>Price (BAHT)</th><th>Price (AU)</th><th>WhatsApp</th><th>Vehicle</th><th>Notes</th></tr></thead>
+<details><summary>🚄 Shin‑Osaka ➔ Shinjuku (31 Aug, 2:00 pm)</summary>
+<table class="fixed">
+<thead>
+<tr>
+<th>Departure Date</th>
+<th>From (Departure)</th>
+<th>To (Destination)</th>
+<th>Departure Time</th>
+<th>Arrival Time</th>
+<th>Duration</th>
+<th>Details</th>
+<th>Fare Each (¥)</th>
+</tr>
+</thead>
 <tbody>
-<tr><td data-label="Provider"><a href="https://www.klook.com/en-AU/airport-transfers/results/?flightDirection=1&amp;from=Phuket%20International%20Airport%28HKT%29&amp;to=Outrigger%20Surin%20Beach%20Resort&amp;address=121%2F1%20Moo%203,%20Srisunthorn%20Rd%20Cheng%20Talay,%20%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5%E0%B9%80%E0%B8%8A%E0%B8%B4%E0%B8%87%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5%20%E0%B8%AD%E0%B8%B3%E0%B9%80%E0%B8%A0%E0%B8%AD%E0%B8%96%E0%B8%A5%E0%B8%B2%E0%B8%87%20%E0%B8%A0%E0%B8%B9%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%95%2083110,%20Thailand&amp;lat=8.1132002&amp;long=98.3169022&amp;poiId=&amp;poi_lat=7.9769193&amp;poi_long=98.2804206&amp;time=2025-05-19%2021%3A30&amp;pas=4&amp;code=HKT&amp;place=ChIJT2IhdsE3UDARjFymk0TnpYM&amp;ac=1&amp;kcid=7&amp;flightNo=&amp;originCode=&amp;spm=AirportTransfer_SearchResult.TopNavigation.SelectCurrency&amp;clickId=53cd5d1b6d" target="_blank">Phuket Freeday Tour</a></td><td data-label="Price (BAHT)">960</td><td data-label="Price (AU)">45.408</td><td data-label="WhatsApp">TBC</td><td data-label="Vehicle">10 seater</td><td data-label="Notes">Instant confirmation. You'll get your booking confirmation in minutes after your payment is complete Free waiting time. You will get a free waiting time of 2 hour(s) after the actual landing time. If you selected a pick-up time, you will get a free waiting time of 30 minutes. Free cancellation up to 24 hour(s) before your pick-up time. Meet &amp; greet. For airport pick up, an airport representative will be waiting at the Arrival Hall holding a Klook sign</td></tr>
-<tr><td data-label="Provider"><a href="https://www.klook.com/en-AU/airport-transfers/results/?flightDirection=1&amp;from=Phuket%20International%20Airport%28HKT%29&amp;to=Outrigger%20Surin%20Beach%20Resort&amp;address=121%2F1%20Moo%203,%20Srisunthorn%20Rd%20Cheng%20Talay,%20%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5%E0%B9%80%E0%B8%8A%E0%B8%B4%E0%B8%87%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5%20%E0%B8%AD%E0%B8%B3%E0%B9%80%E0%B8%A0%E0%B8%AD%E0%B8%96%E0%B8%A5%E0%B8%B2%E0%B8%87%20%E0%B8%A0%E0%B8%B9%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%95%2083110,%20Thailand&amp;lat=8.1132002&amp;long=98.3169022&amp;poiId=&amp;poi_lat=7.9769193&amp;poi_long=98.2804206&amp;time=2025-05-19%2021%3A30&amp;pas=4&amp;code=HKT&amp;place=ChIJT2IhdsE3UDARjFymk0TnpYM&amp;ac=1&amp;kcid=7&amp;flightNo=&amp;originCode=&amp;spm=AirportTransfer_SearchResult.TopNavigation.SelectCurrency&amp;clickId=53cd5d1b6d" target="_blank">Phuket Rainbow International Travel Company Limited</a></td><td data-label="Price (BAHT)">978</td><td data-label="Price (AU)">46.2594</td><td data-label="WhatsApp">TBC</td><td data-label="Vehicle">10 seater</td><td data-label="Notes">You'll get your booking confirmation in minutes after your payment is complete. Free waiting time. You will get a free waiting time of 1 hour(s) 30 minutes after the actual landing time. If you selected a pick-up time, you will get a free waiting time of 30 minutes. Free cancellation up to 24 hour(s) before your pick-up time. Verified for safety. Our verified operators are required to follow strict quality standards to ensure a safe and reliable experience. Enjoy fixed-price pick-ups with trusted partners. Meet &amp; greet. Meet the operator's airport representative at the meeting point. Look out for a sign with Klook logo and the operator's name.</td></tr>
-<tr><td data-label="Provider"><a href="https://www.klook.com/en-AU/airport-transfers/results/?flightDirection=1&amp;from=Phuket%20International%20Airport%28HKT%29&amp;to=Outrigger%20Surin%20Beach%20Resort&amp;address=121%2F1%20Moo%203,%20Srisunthorn%20Rd%20Cheng%20Talay,%20%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5%E0%B9%80%E0%B8%8A%E0%B8%B4%E0%B8%87%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5%20%E0%B8%AD%E0%B8%B3%E0%B9%80%E0%B8%A0%E0%B8%AD%E0%B8%96%E0%B8%A5%E0%B8%B2%E0%B8%87%20%E0%B8%A0%E0%B8%B9%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%95%2083110,%20Thailand&amp;lat=8.1132002&amp;long=98.3169022&amp;poiId=&amp;poi_lat=7.9769193&amp;poi_long=98.2804206&amp;time=2025-05-19%2021%3A30&amp;pas=4&amp;code=HKT&amp;place=ChIJT2IhdsE3UDARjFymk0TnpYM&amp;ac=1&amp;kcid=7&amp;flightNo=&amp;originCode=&amp;spm=AirportTransfer_SearchResult.TopNavigation.SelectCurrency&amp;clickId=53cd5d1b6d" target="_blank">I Asia (Thailand)</a></td><td data-label="Price (BAHT)">978</td><td data-label="Price (AU)">46.2594</td><td data-label="WhatsApp">TBC</td><td data-label="Vehicle">10 seater</td><td data-label="Notes">Guaranteed model: Toyota Commuter 8pax Van. The supplier will give you the exact car model you selected. Instant confirmation. You'll get your booking confirmation in minutes after your payment is complete Free waiting time. You will get a free waiting time of 2 hour(s) after the actual landing time. If you selected a pick-up time, you will get a free waiting time of 30 minutes. Free cancellation up to 12 hour(s) before your pick-up time. Verified for safety. Our verified operators are required to follow strict quality standards to ensure a safe and reliable experience. Enjoy fixed-price pick-ups with trusted partners. Meet &amp; greet. Driver will be waiting to escort you to your vehicle upon your arrival</td></tr>
-</tbody></table>
+<tr>
+<td data-label="Departure Date"><div class="kv"><span class="k">Departure Date</span><span class="sep"> – </span><span class="v">Sun, 31 Aug 2025</span></div></td>
+<td data-label="From (Departure)"><div class="kv"><span class="k">From (Departure)</span><span class="sep"> – </span><span class="v">Shin-Osaka Station</span></div></td>
+<td data-label="To (Destination)"><div class="kv"><span class="k">To (Destination)</span><span class="sep"> – </span><span class="v">Shinjuku Station (via Tokyo)</span></div></td>
+<td data-label="Departure Time"><div class="kv"><span class="k">Departure Time</span><span class="sep"> – </span><span class="v">2:00 PM</span></div></td>
+<td data-label="Arrival Time"><div class="kv"><span class="k">Arrival Time</span><span class="sep"> – </span><span class="v">4:50 PM</span></div></td>
+<td data-label="Duration"><div class="kv"><span class="k">Duration</span><span class="sep"> – </span><span class="v">2 hrs 50 mins</span></div></td>
+<td data-label="Details"><div class="kv"><span class="k">Details</span><span class="sep"> – </span><span class="v"><a href="https://global.jr-central.co.jp/en/onlinebooking/contents/hello_osaka/" rel="noopener" target="_blank">JR Central – Tokaidō Shinkansen (Nozomi/Hikari)</a> + JR East Chūō Rapid</span></div></td>
+<td data-label="Fare Each (¥)"><div class="kv"><span class="k">Fare Each</span><span class="sep"> – </span><span class="v">¥14,500</span></div></td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary>🚄 Shinjuku ➔ Shin‑Osaka (05 Sep, 2:00 pm)</summary>
+<table class="fixed">
+<thead>
+<tr>
+<th>Departure Date</th>
+<th>From (Departure)</th>
+<th>To (Destination)</th>
+<th>Departure Time</th>
+<th>Arrival Time</th>
+<th>Duration</th>
+<th>Details</th>
+<th>Fare Each (¥)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Departure Date"><div class="kv"><span class="k">Departure Date</span><span class="sep"> – </span><span class="v">Fri, 05 Sep 2025</span></div></td>
+<td data-label="From (Departure)"><div class="kv"><span class="k">From (Departure)</span><span class="sep"> – </span><span class="v">Shinjuku Station (via Tokyo)</span></div></td>
+<td data-label="To (Destination)"><div class="kv"><span class="k">To (Destination)</span><span class="sep"> – </span><span class="v">Shin-Osaka Station</span></div></td>
+<td data-label="Departure Time"><div class="kv"><span class="k">Departure Time</span><span class="sep"> – </span><span class="v">2:00 PM</span></div></td>
+<td data-label="Arrival Time"><div class="kv"><span class="k">Arrival Time</span><span class="sep"> – </span><span class="v">4:50 PM</span></div></td>
+<td data-label="Duration"><div class="kv"><span class="k">Duration</span><span class="sep"> – </span><span class="v">2 hrs 50 mins</span></div></td>
+<td data-label="Details"><div class="kv"><span class="k">Details</span><span class="sep"> – </span><span class="v"><a href="https://global.jr-central.co.jp/en/onlinebooking/contents/hello_osaka/" rel="noopener" target="_blank">JR Central – Tokaidō Shinkansen (Nozomi/Hikari)</a> + JR East Chūō Rapid</span></div></td>
+<td data-label="Fare Each (¥)"><div class="kv"><span class="k">Fare Each</span><span class="sep"> – </span><span class="v">¥14,500</span></div></td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary>🚉 Shin‑Osaka ➔ KIX (06 Sep, 2:00 pm)</summary>
+<table class="fixed">
+<thead>
+<tr>
+<th>Departure Date</th>
+<th>From (Departure)</th>
+<th>To (Destination)</th>
+<th>Departure Time</th>
+<th>Arrival Time</th>
+<th>Duration</th>
+<th>Details</th>
+<th>Fare Each (¥)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Departure Date"><div class="kv"><span class="k">Departure Date</span><span class="sep"> – </span><span class="v">Sat, 06 Sep 2025</span></div></td>
+<td data-label="From (Departure)"><div class="kv"><span class="k">From (Departure)</span><span class="sep"> – </span><span class="v">Shin-Osaka Station</span></div></td>
+<td data-label="To (Destination)"><div class="kv"><span class="k">To (Destination)</span><span class="sep"> – </span><span class="v">Kansai Airport (KIX)</span></div></td>
+<td data-label="Departure Time"><div class="kv"><span class="k">Departure Time</span><span class="sep"> – </span><span class="v">2:00 PM</span></div></td>
+<td data-label="Arrival Time"><div class="kv"><span class="k">Arrival Time</span><span class="sep"> – </span><span class="v">2:51 PM</span></div></td>
+<td data-label="Duration"><div class="kv"><span class="k">Duration</span><span class="sep"> – </span><span class="v">51 mins</span></div></td>
+<td data-label="Details"><div class="kv"><span class="k">Details</span><span class="sep"> – </span><span class="v"><a href="https://www.westjr.co.jp/travel-information/en/tickets-passes/oneway/haruka/" rel="noopener" target="_blank">JR West – HARUKA (Shin‑Osaka ⇄ KIX)</a></span></div></td>
+<td data-label="Fare Each (¥)"><div class="kv"><span class="k">Fare Each</span><span class="sep"> – </span><span class="v">¥2,540</span></div></td>
+</tr>
+</tbody>
+</table>
 </details>
 </details>
-
 <script>
 (function() {
   function enhanceNotes() {
@@ -167,6 +308,5 @@
   }
 })();
 </script>
-
 </body>
 </html>
