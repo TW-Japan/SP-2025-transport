@@ -1,6 +1,6 @@
-# 🧳 Japan – Steph and Sarah's Train Guide 2025
+# 🧳 Japan – Steph and Sarah's Travel Guide 2025
 
-This repository contains a mobile-friendly train information for Steph and Sarah's 2025 Japan adventure.
+This repository contains a mobile-friendly travel information for Steph and Sarah's 2025 Japan adventure.
 
 
 
