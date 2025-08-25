@@ -1,12 +1,13 @@
-# 🧳 South Korea Transport Guide 2025
+# 🧳 Japan – Steph and Sarah's Transport Guide 2025
 
-This repository contains a mobile-friendly transport list for your upcoming South Korea trip in 2025.
+This repository contains a mobile-friendly transport information for Steph and Sarah's 2025 Japan adventure.
+
 
 
 ✅ Live Site
 
 Once deployed via GitHub Pages, access the live guide here:  
-**https://tw-south-korea.github.io/GJN-2025-transport/**
+**https://tw-japan.github.io/SP-2025-transport/**
 
 
 
