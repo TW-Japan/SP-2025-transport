@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta name="theme-color" content="#0b3d91"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>🚆 Japan – Steph and Sarah's Travel Guide 2025</title>
+<link href="/SP-2025-transport/assets/manifest.json" rel="manifest"/>
+<link href="/SP-2025-transport/assets/icons/icon-192x192.png" rel="icon" type="image/png"/>
+<link href="/SP-2025-transport/assets/icons/icon-192x192.png" rel="apple-touch-icon"/>
+<style>
+    body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+      padding: 1em;
+    }
+    h1 {
+      text-align: center;
+    }
+    details {
+      margin-bottom: 1.5em;
+      background: white;
+      border-radius: 8px;
+      padding: 1em;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    summary {
+      font-size: 1.2em;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
+    }
+    th, td {
+      padding: 0.5em;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+    th {
+      background: #eaeaea;
+    }
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      td {
+        padding-left: 1em;
+        padding-top: 0.5em;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+      }
+    }
+  
+/* === Responsive card layout for mobile (keeps desktop table intact) === */
+@media (max-width: 600px) {
+  .table-wrapper { overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; }
+  thead { display: none; }
+  tbody, tr, td { display: block; width: 100%; }
+  tr { margin: 0 0 1rem 0; border: 1px solid #e5e5e5; border-radius: 8px; background: #fff; }
+  td { display: flex; justify-content: space-between; gap: 0.75rem; padding: 0.6rem 0.8rem; border: none; border-bottom: 1px solid #f0f0f0; }
+  td:last-child { border-bottom: none; }
+  td::before { content: attr(data-label); font-weight: bold; flex: 0 0 45%; }
+  td > * { max-width: 55%; }
+}
+
+
+/* --- Mobile refinements for long 'Notes' cells --- */
+@media (max-width: 600px) {
+  td[data-label="Notes"] {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  td[data-label="Notes"]::before {
+    margin-bottom: 0.35rem;
+  }
+  td[data-label="Notes"] > * { max-width: 100%; }
+  .notes-clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6; /* show ~6 lines by default */
+    overflow: hidden;
+    word-break: break-word;
+  }
+  .notes-toggle {
+    display: inline-block;
+    margin-top: 0.35rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    background: #f7f7f7;
+  }
+  td[data-label="Notes"].notes-expanded .notes-clamp {
+    -webkit-line-clamp: unset;
+  }
+}
+
+
+/* === Key/Value layout inside cells === */
+.kv { display:inline-flex; align-items:baseline; gap:0.25rem; flex-wrap:nowrap; white-space:nowrap; }
+.kv .k { min-width:0; font-weight:600; } /* fixed label width for alignment */
+.kv .sep { opacity: 0.75; }
+.kv .v { flex:0 0 auto; }
+@media (max-width: 600px) {
+  td::before { content: none !important; } /* prevent duplicate labels on mobile */
+  .kv .k { min-width:0; font-weight:600; }
+  td { padding: 0.45rem 0.6rem; }
+}
+td[data-label="Duration"] .v,
+td[data-label="Fare Each (¥)"] .v,
+td[data-label="Departure Time"] .v,
+td[data-label="Arrival Time"] .v { flex:0 0 auto; }
+
+/* === Desktop: align column headings across all tables & wrap content to fit === */
+@media (min-width: 601px) {
+  table.fixed { table-layout: fixed; width: 100%; }
+  table.fixed th, table.fixed td { vertical-align: top; }
+  table.fixed th { text-align: left; }
+
+  /* Consistent column widths across every table (8 columns) */
+  table.fixed th:nth-child(1), table.fixed td:nth-child(1) { width: 12%; }  /* Departure Date */
+  table.fixed th:nth-child(2), table.fixed td:nth-child(2) { width: 16%; }  /* From (Departure) */
+  table.fixed th:nth-child(3), table.fixed td:nth-child(3) { width: 18%; }  /* To (Destination) */
+  table.fixed th:nth-child(4), table.fixed td:nth-child(4) { width: 11%; }  /* Departure Time */
+  table.fixed th:nth-child(5), table.fixed td:nth-child(5) { width: 11%; }  /* Arrival Time */
+  table.fixed th:nth-child(6), table.fixed td:nth-child(6) { width: 9%; }   /* Duration */
+  table.fixed th:nth-child(7), table.fixed td:nth-child(7) { width: 18%; }  /* Details */
+  table.fixed th:nth-child(8), table.fixed td:nth-child(8) { width: 5%; }   /* Fare Each (¥) */
+
+  /* Keep "Heading – Value" inline but allow natural wrapping within the cell */
+  .kv { display: inline-flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap; white-space: normal; }
+  .kv .v { word-break: break-word; }
+  .kv .sep { opacity: 0.8; }
+}
+
+
+/* === Desktop override: tighter middle columns, wider Details; prevent spill === */
+@media (min-width: 601px) {
+  table.fixed { table-layout: fixed; width: 100%; }
+  table.fixed th, table.fixed td { vertical-align: top; }
+  /* Column widths (sum = 100%) */
+  table.fixed th:nth-of-type(1), table.fixed td:nth-of-type(1) { width: 12% !important; } /* Departure Date */
+  table.fixed th:nth-of-type(2), table.fixed td:nth-of-type(2) { width: 15% !important; } /* From (Departure) */
+  table.fixed th:nth-of-type(3), table.fixed td:nth-of-type(3) { width: 15% !important; } /* To (Destination) */
+  table.fixed th:nth-of-type(4), table.fixed td:nth-of-type(4) { width: 10% !important; } /* Departure Time */
+  table.fixed th:nth-of-type(5), table.fixed td:nth-of-type(5) { width: 10% !important; } /* Arrival Time */
+  table.fixed th:nth-of-type(6), table.fixed td:nth-of-type(6) { width: 7%  !important; } /* Duration */
+  table.fixed th:nth-of-type(7), table.fixed td:nth-of-type(7) { width: 26% !important; } /* Details */
+  table.fixed th:nth-of-type(8), table.fixed td:nth-of-type(8) { width: 5%  !important; } /* Fare Each (¥) */
+
+  /* Keep 'Heading – Value' compact but allow wrapping on values */
+  .kv { display: inline-flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap; white-space: normal; }
+  .kv .v { overflow-wrap: anywhere; word-break: break-word; }
+  .kv .sep { opacity: 0.9; }
+}
+
+</style>
+</head>
+<body>
+<h1>🚆 Japan – Steph and Sarah's Travel Guide 2025</h1>
+<details open=""><summary>🚆 Trains – Aug–Sep 2025 (Shinkansen &amp; Airport Rail)</summary>
+<details><summary>🛫 KIX ➔ Shin‑Osaka (30 Aug, 9:00 pm)</summary>
+<table class="fixed">
+<thead>
+<tr>
+<th>Departure Date</th>
+<th>From (Departure)</th>
+<th>To (Destination)</th>
+<th>Departure Time</th>
+<th>Arrival Time</th>
+<th>Duration</th>
+<th>Details</th>
+<th>Fare Each (¥)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Departure Date"><div class="kv"><span class="k">Departure Date</span><span class="sep"> – </span><span class="v">Sat, 30 Aug 2025</span></div></td>
+<td data-label="From (Departure)"><div class="kv"><span class="k">From (Departure)</span><span class="sep"> – </span><span class="v">Kansai Airport (KIX)</span></div></td>
+<td data-label="To (Destination)"><div class="kv"><span class="k">To (Destination)</span><span class="sep"> – </span><span class="v">Shin-Osaka Station</span></div></td>
+<td data-label="Departure Time"><div class="kv"><span class="k">Departure Time</span><span class="sep"> – </span><span class="v">9:00 PM</span></div></td>
+<td data-label="Arrival Time"><div class="kv"><span class="k">Arrival Time</span><span class="sep"> – </span><span class="v">9:51 PM</span></div></td>
+<td data-label="Duration"><div class="kv"><span class="k">Duration</span><span class="sep"> – </span><span class="v">51 mins</span></div></td>
+<td data-label="Details"><div class="kv"><span class="k">Details</span><span class="sep"> – </span><span class="v"><a href="https://www.westjr.co.jp/travel-information/en/tickets-passes/oneway/haruka/" rel="noopener" target="_blank">JR West – HARUKA (KIX ⇄ Shin‑Osaka)</a></span></div></td>
+<td data-label="Fare Each (¥)"><div class="kv"><span class="k">Fare Each</span><span class="sep"> – </span><span class="v">¥2,540</span></div></td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary>🚄 Shin‑Osaka ➔ Shinjuku (31 Aug, 2:00 pm)</summary>
+<table class="fixed">
+<thead>
+<tr>
+<th>Departure Date</th>
+<th>From (Departure)</th>
+<th>To (Destination)</th>
+<th>Departure Time</th>
+<th>Arrival Time</th>
+<th>Duration</th>
+<th>Details</th>
+<th>Fare Each (¥)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Departure Date"><div class="kv"><span class="k">Departure Date</span><span class="sep"> – </span><span class="v">Sun, 31 Aug 2025</span></div></td>
+<td data-label="From (Departure)"><div class="kv"><span class="k">From (Departure)</span><span class="sep"> – </span><span class="v">Shin-Osaka Station</span></div></td>
+<td data-label="To (Destination)"><div class="kv"><span class="k">To (Destination)</span><span class="sep"> – </span><span class="v">Shinjuku Station (via Tokyo)</span></div></td>
+<td data-label="Departure Time"><div class="kv"><span class="k">Departure Time</span><span class="sep"> – </span><span class="v">2:00 PM</span></div></td>
+<td data-label="Arrival Time"><div class="kv"><span class="k">Arrival Time</span><span class="sep"> – </span><span class="v">4:50 PM</span></div></td>
+<td data-label="Duration"><div class="kv"><span class="k">Duration</span><span class="sep"> – </span><span class="v">2 hrs 50 mins</span></div></td>
+<td data-label="Details"><div class="kv"><span class="k">Details</span><span class="sep"> – </span><span class="v"><a href="https://global.jr-central.co.jp/en/onlinebooking/contents/hello_osaka/" rel="noopener" target="_blank">JR Central – Tokaidō Shinkansen (Nozomi/Hikari)</a> + JR East Chūō Rapid</span></div></td>
+<td data-label="Fare Each (¥)"><div class="kv"><span class="k">Fare Each</span><span class="sep"> – </span><span class="v">¥14,500</span></div></td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary>🚄 Shinjuku ➔ Shin‑Osaka (05 Sep, 2:00 pm)</summary>
+<table class="fixed">
+<thead>
+<tr>
+<th>Departure Date</th>
+<th>From (Departure)</th>
+<th>To (Destination)</th>
+<th>Departure Time</th>
+<th>Arrival Time</th>
+<th>Duration</th>
+<th>Details</th>
+<th>Fare Each (¥)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Departure Date"><div class="kv"><span class="k">Departure Date</span><span class="sep"> – </span><span class="v">Fri, 05 Sep 2025</span></div></td>
+<td data-label="From (Departure)"><div class="kv"><span class="k">From (Departure)</span><span class="sep"> – </span><span class="v">Shinjuku Station (via Tokyo)</span></div></td>
+<td data-label="To (Destination)"><div class="kv"><span class="k">To (Destination)</span><span class="sep"> – </span><span class="v">Shin-Osaka Station</span></div></td>
+<td data-label="Departure Time"><div class="kv"><span class="k">Departure Time</span><span class="sep"> – </span><span class="v">2:00 PM</span></div></td>
+<td data-label="Arrival Time"><div class="kv"><span class="k">Arrival Time</span><span class="sep"> – </span><span class="v">4:50 PM</span></div></td>
+<td data-label="Duration"><div class="kv"><span class="k">Duration</span><span class="sep"> – </span><span class="v">2 hrs 50 mins</span></div></td>
+<td data-label="Details"><div class="kv"><span class="k">Details</span><span class="sep"> – </span><span class="v"><a href="https://global.jr-central.co.jp/en/onlinebooking/contents/hello_osaka/" rel="noopener" target="_blank">JR Central – Tokaidō Shinkansen (Nozomi/Hikari)</a> + JR East Chūō Rapid</span></div></td>
+<td data-label="Fare Each (¥)"><div class="kv"><span class="k">Fare Each</span><span class="sep"> – </span><span class="v">¥14,500</span></div></td>
+</tr>
+</tbody>
+</table>
+</details>
+<details><summary>🚉 Shin‑Osaka ➔ KIX (06 Sep, 2:00 pm)</summary>
+<table class="fixed">
+<thead>
+<tr>
+<th>Departure Date</th>
+<th>From (Departure)</th>
+<th>To (Destination)</th>
+<th>Departure Time</th>
+<th>Arrival Time</th>
+<th>Duration</th>
+<th>Details</th>
+<th>Fare Each (¥)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Departure Date"><div class="kv"><span class="k">Departure Date</span><span class="sep"> – </span><span class="v">Sat, 06 Sep 2025</span></div></td>
+<td data-label="From (Departure)"><div class="kv"><span class="k">From (Departure)</span><span class="sep"> – </span><span class="v">Shin-Osaka Station</span></div></td>
+<td data-label="To (Destination)"><div class="kv"><span class="k">To (Destination)</span><span class="sep"> – </span><span class="v">Kansai Airport (KIX)</span></div></td>
+<td data-label="Departure Time"><div class="kv"><span class="k">Departure Time</span><span class="sep"> – </span><span class="v">2:00 PM</span></div></td>
+<td data-label="Arrival Time"><div class="kv"><span class="k">Arrival Time</span><span class="sep"> – </span><span class="v">2:51 PM</span></div></td>
+<td data-label="Duration"><div class="kv"><span class="k">Duration</span><span class="sep"> – </span><span class="v">51 mins</span></div></td>
+<td data-label="Details"><div class="kv"><span class="k">Details</span><span class="sep"> – </span><span class="v"><a href="https://www.westjr.co.jp/travel-information/en/tickets-passes/oneway/haruka/" rel="noopener" target="_blank">JR West – HARUKA (Shin‑Osaka ⇄ KIX)</a></span></div></td>
+<td data-label="Fare Each (¥)"><div class="kv"><span class="k">Fare Each</span><span class="sep"> – </span><span class="v">¥2,540</span></div></td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<script>
+(function() {
+  function enhanceNotes() {
+    var cells = document.querySelectorAll('td[data-label="Notes"]');
+    cells.forEach(function(td) {
+      if (td.dataset.enhanced === "1") return;
+      var text = td.textContent.trim();
+      if (!text) return;
+      td.innerHTML = '<div class="notes-clamp"></div><button class="notes-toggle" aria-expanded="false" type="button">Show more</button>';
+      td.querySelector('.notes-clamp').textContent = text;
+      td.dataset.enhanced = "1";
+      var btn = td.querySelector('.notes-toggle');
+      btn.addEventListener('click', function() {
+        var expanded = td.classList.toggle('notes-expanded');
+        btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        btn.textContent = expanded ? 'Show less' : 'Show more';
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', enhanceNotes);
+  } else {
+    enhanceNotes();
+  }
+})();
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/SP-2025-transport/service-worker.js')
+      .catch(function(err){ console.warn('SW registration failed:', err); });
+  });
+}
+</script>
+
+</body>
+</html>
