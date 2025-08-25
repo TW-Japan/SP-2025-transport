@@ -165,6 +165,20 @@ td[data-label="Arrival Time"] .v { flex:0 0 auto; }
   .kv .sep { opacity: 0.9; }
 }
 
+
+
+/* --- Mobile readability fix for Index A tables --- */
+@media (max-width: 600px) {
+  details { padding: 0.75rem; }
+  table { width: 100%; border-collapse: collapse; }
+  thead { display: none !important; }
+  table, tbody, tr, td { display: block; width: 100%; }
+  tr { margin: 0 0 1rem 0; border: 1px solid #e5e5e5; border-radius: 10px; background: #fff; overflow: hidden; }
+  td { padding: 0.65rem 0.9rem; border: none !important; border-bottom: 1px solid #f0f0f0 !important; }
+  td:last-child { border-bottom: none !important; }
+  td > strong { display: block; margin-bottom: 0.25rem; font-weight: 700; }
+}
+
 </style>
 </head>
 <body>
