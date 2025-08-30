@@ -145,22 +145,7 @@ td[data-label="Arrival Time"] .v { flex:0 0 auto; }
 }
 
 
-/* === Desktop override: tighter middle columns, wider Details; prevent spill === */
-@media (min-width: 601px) {
-  table.fixed { table-layout: fixed; width: 100%; }
-  table.fixed th, table.fixed td { vertical-align: top; }
-  /* Column widths (sum = 100%) */
-  table.fixed th:nth-of-type(1), table.fixed td:nth-of-type(1) { width: 12% !important; } /* Departure Date */
-  table.fixed th:nth-of-type(2), table.fixed td:nth-of-type(2) { width: 15% !important; } /* From (Departure) */
-  table.fixed th:nth-of-type(3), table.fixed td:nth-of-type(3) { width: 15% !important; } /* To (Destination) */
-  table.fixed th:nth-of-type(4), table.fixed td:nth-of-type(4) { width: 10% !important; } /* Departure Time */
-  table.fixed th:nth-of-type(5), table.fixed td:nth-of-type(5) { width: 10% !important; } /* Arrival Time */
-  table.fixed th:nth-of-type(6), table.fixed td:nth-of-type(6) { width: 7%  !important; } /* Duration */
-  table.fixed th:nth-of-type(7), table.fixed td:nth-of-type(7) { width: 26% !important; } /* Details */
-  table.fixed th:nth-of-type(8), table.fixed td:nth-of-type(8) { width: 5%  !important; } /* Fare Each (¥) */
 
-  /* Keep 'Heading : Value' compact but allow wrapping on values */
-  .kv { display: inline-flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap; white-space: normal; }
   .kv .v { overflow-wrap: anywhere; word-break: break-word; }
   .kv .sep { opacity: 0.9; }
 }
@@ -205,11 +190,95 @@ td > strong::after { content: ": "; }
 @media (max-width: 600px) {
   td > strong { display: block !important; }
 }
-\n</style>
+\n
+
+@media (min-width: 601px) {
+  table.fixed { table-layout: fixed; width: 100%; }
+  table.fixed th, table.fixed td { vertical-align: top; text-align: left; }
+
+  /* Consistent column widths across every table (7 columns) */
+  table.fixed th:nth-of-type(1), table.fixed td:nth-of-type(1) { width: 12% !important; } /* Departure Date */
+  table.fixed th:nth-of-type(2), table.fixed td:nth-of-type(2) { width: 26% !important; } /* From (Departure) */
+  table.fixed th:nth-of-type(3), table.fixed td:nth-of-type(3) { width: 26% !important; } /* To (Destination) */
+  table.fixed th:nth-of-type(4), table.fixed td:nth-of-type(4) { width: 10% !important; } /* Departure Time */
+  table.fixed th:nth-of-type(5), table.fixed td:nth-of-type(5) { width: 10% !important; } /* Arrival Time */
+  table.fixed th:nth-of-type(6), table.fixed td:nth-of-type(6) { width: 11% !important; } /* Duration */
+  table.fixed th:nth-of-type(7), table.fixed td:nth-of-type(7) { width: 5%  !important; } /* Fare Each (¥) */
+}
+</style>
 </head>
 <body>
 <h1>🚆 Japan – Steph and Sarah's Travel Guide (May 2025)</h1>
-<details open=""><summary>Trains — Aug 2025:Sep 2025 (Shinkansen &amp; Airport Rail)</summary><details><summary>🛫 Kansai Airport (KIX) → Kyoto Station (Sat 30 Aug 2025, 21:00)</summary><table class="table is-narrow is-fullwidth fixed"><thead><tr><th>Departure Date</th><th>From (Departure)</th><th>To (Destination)</th><th>Departure Time</th><th>Arrival Time</th><th>Duration</th><th>Booking</th><th>Fare Each (¥)</th></tr></thead><tbody><tr><td><strong>Departure Date</strong>Sat, 30 Aug 2025</td><td><strong>From (Departure)</strong>Kansai Airport (KIX)</td><td><strong>To (Destination)</strong>Kyoto Station</td><td><strong>Departure Time</strong>21:00</td><td><strong>Arrival Time</strong>22:15</td><td><strong>Duration</strong>75 mins</td><td><strong>Booking</strong><a href="https://www.westjr.co.jp/global/en/ticket/haruka-oneway/reservation/" rel="noopener" target="_blank">JR West : HARUKA One‑way (Official booking)</a></td><td><strong>Fare Each</strong>¥1,100</td></tr></tbody></table></details><details><summary>🚄 Kyoto Station → Tokyo Station (Tue 02 Sep 2025, 12:00)</summary><table class="table is-narrow is-fullwidth fixed"><thead><tr><th>Departure Date</th><th>From (Departure)</th><th>To (Destination)</th><th>Departure Time</th><th>Arrival Time</th><th>Duration</th><th>Booking</th><th>Fare Each (¥)</th></tr></thead><tbody><tr><td><strong>Departure Date</strong>Tue, 02 Sep 2025</td><td><strong>From (Departure)</strong>Kyoto Station</td><td><strong>To (Destination)</strong>Tokyo Station</td><td><strong>Departure Time</strong>12:00</td><td><strong>Arrival Time</strong>14:14</td><td><strong>Duration</strong>134 mins</td><td><strong>Booking</strong><a href="https://smart-ex.jp/en/lp/app/" rel="noopener" target="_blank">JR Central : Smart‑EX (Official booking)</a> Ordinary: ¥13,770; Green: ¥18,640; Non‑reserved: ¥13,320</td><td><strong>Fare Each</strong>¥13,770</td></tr></tbody></table></details><details><summary>🚄 Tokyo Station → Shin-Osaka Station (Fri 05 Sep 2025, 14:00)</summary><table class="table is-narrow is-fullwidth fixed"><thead><tr><th>Departure Date</th><th>From (Departure)</th><th>To (Destination)</th><th>Departure Time</th><th>Arrival Time</th><th>Duration</th><th>Booking</th><th>Fare Each (¥)</th></tr></thead><tbody><tr><td><strong>Departure Date</strong>Fri, 05 Sep 2025</td><td><strong>From (Departure)</strong>Tokyo Station</td><td><strong>To (Destination)</strong>Shin-Osaka Station</td><td><strong>Departure Time</strong>14:00</td><td><strong>Arrival Time</strong>16:30</td><td><strong>Duration</strong>150 mins</td><td><strong>Booking</strong><a href="https://shinkansen2.jr-central.co.jp/RSV_P/smart_en_index.htm?" rel="noopener" target="_blank">JR Central : Smart‑EX (Official booking)</a> Ordinary: ¥14,520; Green: ¥19,390; Non‑reserved: ¥13,870</td><td><strong>Fare Each</strong>¥14,520</td></tr></tbody></table></details><details><summary>🚉 Shin-Osaka Station → Kansai Airport (KIX) (Sat 06 Sep 2025, 14:00)</summary><table class="table is-narrow is-fullwidth fixed"><thead><tr><th>Departure Date</th><th>From (Departure)</th><th>To (Destination)</th><th>Departure Time</th><th>Arrival Time</th><th>Duration</th><th>Booking</th><th>Fare Each (¥)</th></tr></thead><tbody><tr><td><strong>Departure Date</strong>Sat, 06 Sep 2025</td><td><strong>From (Departure)</strong>Shin-Osaka Station</td><td><strong>To (Destination)</strong>Kansai Airport (KIX)</td><td><strong>Departure Time</strong>14:00</td><td><strong>Arrival Time</strong>14:51</td><td><strong>Duration</strong>51 mins</td><td><strong>Booking</strong><a href="https://www.westjr.co.jp/global/en/ticket/haruka-oneway/reservation/" rel="noopener" target="_blank">JR West : HARUKA One‑way (Official booking)</a></td><td><strong>Fare Each</strong>¥900</td></tr></tbody></table></details></details>
+<details open=""><summary>Trains — (Shinkansen &amp; Airport Rail)</summary>
+<details>
+<summary>🧳 Kansai Airport (KIX) → Hotel Vischio Kyoto by GRANVIA</summary>
+<table class="table is-narrow is-fullwidth fixed">
+<thead>
+<tr>
+<th>Departure Date</th><th>From (Departure)</th><th>To (Destination)</th><th>Trip</th><th>Time</th><th>Fare</th><th>Ticket</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Departure Date</strong>Sat, 30 Aug 2025</td>
+<td><strong>From (Departure)</strong>: <a href="https://maps.app.goo.gl/BKuEUtSP8Aq3xb3BA" target="_blank">Kansai International Airport (KIX)</a></td>
+<td><strong>To (Destination)</strong>: <a href="https://maps.app.goo.gl/BRpZQEGhxnjEWY9v8" target="_blank">Hotel Vischio Kyoto by GRANVIA</a></td><td><strong>Trip</strong><a href="https://maps.app.goo.gl/uR5VUpYRFb7HXAAK9" target="_blank">KIX &gt; Hotel Vischio Kyoto</a></td><td><strong>Time</strong>9:30 PM - 10:58 PM (1 hr 28 min) - Bus 1 hr 25 min + Walk 3 mins</td><td><strong>Fare</strong>¥2,800</td><td><strong>Ticket</strong>Kansai Airport Limousine Bus Information Counter</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+<summary>🧳 Hotel Vischio Kyoto → Kyoto Station</summary>
+<table class="table is-narrow is-fullwidth fixed">
+<thead>
+<tr>
+<th>Departure Date</th><th>From (Departure)</th><th>To (Destination)</th><th>Trip</th><th>Time</th><th>Fare</th><th>Ticket</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Departure Date</strong>Tue, 02 Sep 2025</td>
+<td><strong>From (Departure)</strong>: <a href="https://maps.app.goo.gl/BRpZQEGhxnjEWY9v8" target="_blank">Hotel Vischio Kyoto by GRANVIA</a></td>
+<td><strong>To (Destination)</strong>: <a href="https://maps.app.goo.gl/yosPBLgEWKEeCaqr9" target="_blank">Kyoto Station</a></td><td><strong>Trip</strong><a href="https://maps.app.goo.gl/qYVeoETY4vQbKmPX7" target="_blank">Vischio Kyoto → Kyoto Station</a></td><td><strong>Time</strong>12:10 PM - 12:12 PM (2 min) - Walk 2 mins</td><td><strong>Fare</strong>FREE</td><td><strong>Ticket</strong>None</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+<summary>🧳 YOTEL Tokyo Ginza → Tokyo Station</summary>
+<table class="table is-narrow is-fullwidth fixed">
+<thead>
+<tr>
+<th>Departure Date</th><th>From (Departure)</th><th>To (Destination)</th><th>Trip</th><th>Time</th><th>Fare</th><th>Ticket</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Departure Date</strong>Fri, 05 Sep 2025</td>
+<td><strong>From (Departure)</strong>: <a href="https://maps.app.goo.gl/eZ411E85P6G869sP9" target="_blank">YOTEL Tokyo Ginza</a></td>
+<td><strong>To (Destination)</strong>: <a href="https://maps.app.goo.gl/JQ91RbRFf8a1pnFFA" target="_blank">Tokyo Station</a></td><td><strong>Trip</strong><a href="https://maps.app.goo.gl/FjBBHRHyoDqGEnrj9" target="_blank">Vischio Kyoto → Kyoto Station</a></td><td><strong>Time</strong>2:17 PM - 2:25 PM (8 min) - Walk 6 mins + Train 2 mins</td><td><strong>Fare</strong>¥150</td><td><strong>Ticket</strong>At the Station (use your ICOCA card)</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+<summary>🧳 Candeo Hotels Osaka Namba → Kansai Airport (KIX)</summary>
+<table class="table is-narrow is-fullwidth fixed">
+<thead>
+<tr>
+<th>Departure Date</th><th>From (Departure)</th><th>To (Destination)</th><th>Trip</th><th>Time</th><th>Fare</th><th>Ticket</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Departure Date</strong>Sat, 06 Sep 2025</td>
+<td><strong>From (Departure)</strong>: <a href="https://maps.app.goo.gl/nk9jjvhT3tpz9FTu9" target="_blank">Candeo Hotels Osaka Namba</a></td>
+<td><strong>To (Destination)</strong>: <a href="https://maps.app.goo.gl/BKuEUtSP8Aq3xb3BA" target="_blank">Kansai International Airport (KIX)</a></td><td><strong>Trip</strong><a href="https://maps.app.goo.gl/njDAJjeVCiKQ9Y3w8" target="_blank">Osaka Namba → KIX</a></td><td><strong>Time</strong>2:02 PM - 2:52 PM (50min) - Walk 6 mins + Train 42 mins</td><td><strong>Fare</strong>¥970</td><td><strong>Ticket</strong>At the Station (use your ICOCA card)</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
 <script>
 (function() {
   function enhanceNotes() {
@@ -236,7 +305,6 @@ td > strong::after { content: ": "; }
   }
 })();
 </script>
-
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
