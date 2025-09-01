@@ -1,4 +1,4 @@
-# 🧳 Japan – Steph and Sarah's Travel Guide 2025
+# 🚆 Japan – Steph and Sarah's Transport Guide (May 2025)
 
 This repository contains a mobile-friendly travel information for Steph and Sarah's 2025 Japan adventure.
 
