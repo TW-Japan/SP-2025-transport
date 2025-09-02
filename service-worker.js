@@ -1,14 +1,14 @@
 /* eslint-disable no-restricted-globals */
 const VERSION = 'v2025-08-30-01';
-const CACHE_NAME = `sp-2025-transport-${VERSION}`;
+const CACHE_NAME = `sp-2025-activities-${VERSION}`;
 
 const APP_SHELL = [
-  '/SP-2025-transport/',
-  '/SP-2025-transport/index.html',
-  '/SP-2025-transport/assets/manifest.json',
-  '/SP-2025-transport/assets/icons/icon-192x192.png',
-  '/SP-2025-transport/assets/icons/icon-512x512.png',
-  '/SP-2025-transport/offline.html',
+  '/SP-2025-activities/',
+  '/SP-2025-activities/index.html',
+  '/SP-2025-activities/assets/manifest.json',
+  '/SP-2025-activities/assets/icons/icon-192x192.png',
+  '/SP-2025-activities/assets/icons/icon-512x512.png',
+  '/SP-2025-activities/offline.html',
 ];
 
 self.addEventListener('install', event => {
@@ -19,7 +19,7 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
   event.waitUntil((async () => {
     const keys = await caches.keys();
-    await Promise.all(keys.filter(k => k.startsWith('sp-2025-transport-') && k !== CACHE_NAME).map(k => caches.delete(k)));
+    await Promise.all(keys.filter(k => k.startsWith('sp-2025-activities-') && k !== CACHE_NAME).map(k => caches.delete(k)));
     await self.clients.claim();
     const clientsList = await self.clients.matchAll({ includeUncontrolled: true, type: 'window' });
     for (const client of clientsList) {
@@ -48,11 +48,11 @@ async function networkFirstNavigation(request) {
   try {
     const response = await promiseWithTimeout(fetch(request), NETWORK_TIMEOUT_MS);
     const cache = await caches.open(CACHE_NAME);
-    cache.put('/SP-2025-transport/index.html', response.clone());
+    cache.put('/SP-2025-activities/index.html', response.clone());
     return response;
   } catch (err) {
-    const cached = await caches.match('/SP-2025-transport/index.html') ||
-                   await caches.match('/SP-2025-transport/offline.html');
+    const cached = await caches.match('/SP-2025-activities/index.html') ||
+                   await caches.match('/SP-2025-activities/offline.html');
     return cached;
   }
 }
